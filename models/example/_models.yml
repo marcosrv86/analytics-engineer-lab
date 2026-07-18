@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_rendimiento_agro
+    description: "Modelo de staging para la limpieza de los lotes de cosecha."
+    columns:
+      - name: id_lote
+        description: "Clave primaria del lote agrícola."
+        tests:
+          - unique
+          - not_null
+      - name: tn_netas
+        description: "Toneladas netas totales cosechadas."
+      - name: rinde_ha
+        description: "Rendimiento promedio por hectárea."
