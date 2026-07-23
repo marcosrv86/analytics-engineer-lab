@@ -13,3 +13,10 @@ models:
         description: "Volumen bruto extraído (en barriles)."
         tests:
           - not_null
+  - name: fct_produccion_pozos
+    description: "Tabla de hechos con la volumetría agregada por pozo petrolero."
+    columns:
+      - name: id_pozo
+        tests:
+          - unique
+          - not_null
