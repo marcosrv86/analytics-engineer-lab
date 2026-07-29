@@ -8,7 +8,7 @@ WITH pivot_datos AS (
         -- 2. Iniciamos el bucle. Por cada provincia en la lista, escribe lo siguiente:
         {% for provincia in provincias %}
         
-        SUM(CASE WHEN provincia = '{{ provincia }}' THEN total_barriles ELSE 0 END) AS barriles_{{ provincia | replace(' ', '_') | lower }}
+                SUM(CASE WHEN provincia = '{{ provincia }}' THEN total_barriles ELSE 0 END) AS barriles_{{ provincia | replace(' ', '_') | replace('é', 'e') | lower }}
         
         -- 3. Lógica para las comas: Si NO es la última iteración del bucle, pon una coma.
         {% if not loop.last %} , {% endif %}
