@@ -1,4 +1,7 @@
-{{ config(materialized='table') }}
+{{ config(
+    materialized='incremental',
+    unique_key='id_pozo'
+) }}
 
 WITH extraccion AS (
     SELECT * FROM {{ ref('stg_extraccion_pozos') }}
