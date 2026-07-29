@@ -16,7 +16,7 @@ SELECT
     MAX(e.fecha_medicion) AS ultima_extraccion,
     SUM(e.barriles_extraidos) AS total_barriles,
     {{ convertir_barriles_a_m3('SUM(e.barriles_extraidos)') }} AS total_metros_cubicos,
-   SUM(e.horas_operacion) AS hs_operacion_total
+   SUM(e.horas_operacion) AS horas_trabajada
 FROM 
     extraccion e
 LEFT JOIN 
