@@ -5,6 +5,10 @@
 
 WITH extraccion AS (
     SELECT * FROM {{ ref('stg_extraccion_pozos') }}
+    
+    {% if is_incremental() %}
+      WHERE fecha_medicion > (SELECT MAX(fecha_medicion) FROM {{ this }})
+    {% endif %}
 ),
 
 geografia AS (
