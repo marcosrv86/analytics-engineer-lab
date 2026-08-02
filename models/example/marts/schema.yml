@@ -10,8 +10,9 @@ models:
           - unique
           - not_null
           - relationships:
-              to: ref('mapa_pozos')
-              field: id_pozo
+              arguments:
+                to: ref('mapa_pozos')
+                field: id_pozo
 
       - name: total_barriles
         description: "Suma total de barriles extraídos."
