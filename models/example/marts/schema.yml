@@ -18,3 +18,9 @@ models:
         description: "Suma total de barriles extraídos."
         tests:
           - not_null
+          
+      - name: provincia
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["Neuquén", "Mendoza", "Santa Cruz", "Chubut", "Salta"]
