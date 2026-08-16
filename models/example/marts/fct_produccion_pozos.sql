@@ -39,3 +39,4 @@ GROUP BY
     e.id_pozo,
     g.cuenca,
     g.provincia
+    
