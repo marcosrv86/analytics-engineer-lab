@@ -1,7 +1,14 @@
-{{ config(
-    materialized='table',
-    unique_key='id_pozo'
-) }}
+{{
+  config(
+    materialized = 'table',
+    partition_by = {
+      "field": "ultima_extraccion",
+      "data_type": "date",
+      "granularity": "month"
+    },
+    cluster_by = ['provincia', 'id_pozo']
+  )
+}}
 
 WITH extraccion AS (
     SELECT * FROM {{ ref('stg_extraccion_pozos') }}
@@ -32,3 +39,4 @@ GROUP BY
     e.id_pozo,
     g.cuenca,
     g.provincia
+    
