@@ -6,7 +6,8 @@
       "data_type": "date",
       "granularity": "month"
     },
-    cluster_by = ['provincia', 'id_pozo']
+    cluster_by = ['provincia', 'id_pozo'],
+    partition_expiration_days = 3650
   )
 }}
 
