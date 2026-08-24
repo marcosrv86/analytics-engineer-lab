@@ -6,7 +6,7 @@ SELECT
   {{ dbt_utils.pivot(
       'provincia',
       dbt_utils.get_column_values(ref('fct_produccion_pozos'), 'provincia'),
-      then_value='barriles'
+      then_value='total_barriles'
   ) }}
 
 FROM {{ ref('fct_produccion_pozos') }}
