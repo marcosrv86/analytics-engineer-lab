@@ -44,4 +44,4 @@ models:
             description: "Nombre de provincia"
             tests:
                - accepted_values:
-                   values: ['Neuquén', 'Chubut', 'Santa Cruz', 'Mendoza', 'Salta']
+                   values: ['Neuquén', 'Chubut', 'Santa Cruz', 'Mendoza', 'Salta'] 
